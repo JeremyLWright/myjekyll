@@ -4,4 +4,6 @@ RUN gem install jekyll-scholar jekyll-gist jekyll-sitemap jekyll-seo-tag jekyll-
 RUN gem install webrick
 RUN chown jekyll:jekyll -R /usr/gem
 
-CMD [ "bash" ]
+COPY entrypoint.sh /
+
+ENTRYPOINT ["/entrypoint.sh"]
